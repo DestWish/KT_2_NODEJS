@@ -1,6 +1,8 @@
 const http = require('http');
 const os = require('os');
 
+const moduleSin = require('./sin');
+
 let username = os.userInfo().username;
 const server = http.createServer((req, res) => {
 
@@ -9,7 +11,8 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
     
     // Отправляем ответ
-    res.end(`Привет ${username}, это сервер на Node.js!`);
+    res.end(`Привет ${username}, это сервер на Node.js!
+    Синус 15 = ${moduleSin(15)}`);
 });
 
 const PORT = 3000;
