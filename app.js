@@ -1,13 +1,12 @@
 const http = require('http');
-const os = require('os');
+
 
 const moduleSin = require('./sin');
 
 const moduleGreeting = require('./greeting');
 
+const moduleUser = require('./user');
 
-
-let username = os.userInfo().username;
 const server = http.createServer((req, res) => {
 
     // Устанавливаем статус и заголовки
@@ -16,7 +15,7 @@ const server = http.createServer((req, res) => {
     
     // Отправляем ответ
     res.end(`Дата запроса: ${moduleGreeting.Date}
-    Привет ${username}, это сервер на Node.js!
+    ${moduleGreeting.getMessage(moduleUser.username)}
     Синус 15 = ${moduleSin(15)}`);
 });
 
