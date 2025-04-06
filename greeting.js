@@ -1,5 +1,6 @@
 let currentDate = new Date();
 module.exports.Date = currentDate;
+global.date = currentDate;
 
 module.exports.getMessage = function(name) {
     let hours = currentDate.getHours();

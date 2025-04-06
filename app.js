@@ -13,6 +13,8 @@ const moduleWelcome = require('./welcome');
 console.log(moduleWelcome.getMorningMessage());
 console.log(moduleWelcome.getEveningMessage());
 
+global.console.log("Глобальные переменные date и username", global.date, global.username);
+
 const server = http.createServer((req, res) => {
 
     // Устанавливаем статус и заголовки
