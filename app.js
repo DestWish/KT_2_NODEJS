@@ -8,6 +8,11 @@ const moduleGreeting = require('./greeting');
 const moduleUser = require('./user');
 var moduleUser2 = require('./user');
 
+const moduleWelcome = require('./welcome');
+
+console.log(moduleWelcome.getMorningMessage());
+console.log(moduleWelcome.getEveningMessage());
+
 const server = http.createServer((req, res) => {
 
     // Устанавливаем статус и заголовки
